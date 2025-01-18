@@ -7,6 +7,7 @@ public class BallMovement : MonoBehaviour
 
     float distToGround;
 
+    public PlayerManager playerManager;
     Rigidbody rb;
     Collider c;
 
@@ -26,12 +27,12 @@ public class BallMovement : MonoBehaviour
 
         rb.AddForce(Camera.main.transform.TransformDirection(new Vector3(xMovement, 0.0f, zMovement)));
 
-        if (Input.GetAxis("Jump") > 0 && isGrounded()) {
+        if (Input.GetAxis("Jump") > 0 && isGrounded() && playerManager.hasJumpPowerUp == true) {
             rb.AddForce(new Vector3(0.0f, 100f, 0.0f));
         }
 
-        if (Input.GetKey(KeyCode.LeftShift)) {
-            speed = initialSpeed + 200;
+        if (Input.GetKey(KeyCode.LeftShift) && playerManager.hasSpeedPowerUp == true) {
+            speed = initialSpeed * 2;
             Camera.main.fieldOfView = 95;
         }
         else {

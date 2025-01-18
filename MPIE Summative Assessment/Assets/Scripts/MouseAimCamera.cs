@@ -11,6 +11,9 @@ public class MouseAimCamera : MonoBehaviour
     
     void Start() {
         offset = target.transform.position - transform.position;
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
     
     void LateUpdate() {
