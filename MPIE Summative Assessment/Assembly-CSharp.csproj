@@ -65,13 +65,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\PowerUpTrigger.cs" />
+    <Compile Include="Assets\Scripts\CoinSpin.cs" />
     <Compile Include="Assets\Scripts\BallMovement.cs" />
+    <Compile Include="Assets\Scripts\CoinTrigger.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\FollowGameObject.cs" />
     <Compile Include="Assets\Polytope Studio\Lowpoly_Demos\Environment_Free\Helpers\MouseLook.cs" />
     <Compile Include="Assets\Scripts\CheckpointTrigger.cs" />
+    <Compile Include="Assets\CanvasManager.cs" />
     <Compile Include="Assets\Scripts\RespawnTrigger.cs" />
     <Compile Include="Assets\Polytope Studio\Lowpoly_Demos\Environment_Free\Helpers\PlayerMovement.cs" />
+    <Compile Include="Assets\MovingPlatform.cs" />
     <Compile Include="Assets\Scripts\MouseAimCamera.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,7 +6,8 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public GameObject ball;
-    int lives = 3;
+    public int lives = 3;
+    public int coins;
     public int checkpointReached = 0;
     public bool hasJumpPowerUp;
     public bool hasSpeedPowerUp;

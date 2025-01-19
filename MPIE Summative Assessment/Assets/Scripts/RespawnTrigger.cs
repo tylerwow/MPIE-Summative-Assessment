@@ -8,5 +8,6 @@ public class RespawnTrigger : MonoBehaviour
     
     void OnTriggerEnter() {
         playerManager.RespawnPlayer();
+        playerManager.lives--;
     }
 }
