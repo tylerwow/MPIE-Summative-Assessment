@@ -12,13 +12,12 @@ public class PowerUpTrigger : MonoBehaviour
     void OnTriggerEnter() {
         if (powerUp.name == "Jump Power Up") {
             playerManager.hasJumpPowerUp = true;
-
-            Console.WriteLine("Jump Power Up Unlocked");
         }
         if (powerUp.name == "Speed Power Up") {
             playerManager.hasSpeedPowerUp = true;
-
-            Console.WriteLine("Speed Power Up Unlocked");
+        }
+        if (powerUp.name == "Jump Boost Power Up") {
+            playerManager.hasJumpBoostPowerUp = true;
         }
 
         powerUp.SetActive(false);

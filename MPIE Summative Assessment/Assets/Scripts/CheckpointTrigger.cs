@@ -20,6 +20,18 @@ public class CheckpointTrigger : MonoBehaviour
             playerManager.UpdateCheckpoint(2, checkpoint.transform.position - new Vector3(5.0f, 0.0f, 0.0f));
             canvasManager.DisplayCheckpointText("Checkpoint 2 set");
         }
+        else if (checkpoint.name == "Checkpoint 3") {
+            playerManager.UpdateCheckpoint(3, checkpoint.transform.position - new Vector3(5.0f, 0.0f, 0.0f));
+            canvasManager.DisplayCheckpointText("Checkpoint 3 set");
+        }
+        else if (checkpoint.name == "Checkpoint 4") {
+            playerManager.UpdateCheckpoint(4, checkpoint.transform.position - new Vector3(5.0f, 0.0f, 0.0f));
+            canvasManager.DisplayCheckpointText("Checkpoint 4 set");
+        }
+        else if (checkpoint.name == "Checkpoint 5") {
+            playerManager.UpdateCheckpoint(5, checkpoint.transform.position - new Vector3(5.0f, 0.0f, 0.0f));
+            canvasManager.DisplayCheckpointText("Checkpoint 5 set");
+        }
     }
 
     void OnTriggerExit() {
