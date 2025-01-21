@@ -1,8 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CheckpointTrigger : MonoBehaviour
@@ -12,6 +7,7 @@ public class CheckpointTrigger : MonoBehaviour
     public GameObject checkpoint;
 
     void OnTriggerEnter() {
+        //Checks checkpoint and updates respawn position in Player Manager, and displays confirmation text
         if (checkpoint.name == "Checkpoint 1") {
             playerManager.UpdateCheckpoint(1, checkpoint.transform.position - new Vector3(5.0f, 0.0f, 0.0f));
             canvasManager.DisplayCheckpointText("Checkpoint 1 set");
@@ -35,6 +31,7 @@ public class CheckpointTrigger : MonoBehaviour
     }
 
     void OnTriggerExit() {
+        //Resets canvas text
         canvasManager.DisplayCheckpointText("");
     }
 }

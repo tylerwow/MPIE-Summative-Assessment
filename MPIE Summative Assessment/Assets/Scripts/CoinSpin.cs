@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CoinSpin : MonoBehaviour
@@ -15,6 +11,7 @@ public class CoinSpin : MonoBehaviour
 
     void FixedUpdate()
     {
+        //Spins object
         t.Rotate(0.0f, 2.0f, 0.0f);
     }
 }

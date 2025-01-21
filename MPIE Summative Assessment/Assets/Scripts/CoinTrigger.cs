@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CoinTrigger : MonoBehaviour
@@ -12,6 +9,7 @@ public class CoinTrigger : MonoBehaviour
     public PlayerManager playerManager;
 
     void OnTriggerEnter() {
+        //Plays coin sound, deactivates coin and adds to coin count
         coinSound.Play();
         coin.SetActive(false);
         playerManager.coins++;

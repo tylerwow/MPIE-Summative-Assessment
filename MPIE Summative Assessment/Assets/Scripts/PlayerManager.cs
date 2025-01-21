@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -14,10 +11,8 @@ public class PlayerManager : MonoBehaviour
     public bool hasJumpPowerUp;
     public bool hasSpeedPowerUp;
     public bool hasJumpBoostPowerUp;
-
     bool jumpPowerUpTutorial;
     bool speedPowerUpTutorial;
-
     Vector3 respawnPos;
 
     void Start()
@@ -30,12 +25,11 @@ public class PlayerManager : MonoBehaviour
 
         jumpPowerUpTutorial = true;
         speedPowerUpTutorial = true;
-
-        RespawnPlayer();
     }
 
     void Update()
     {
+        //Shows movement tutorial text
         if (!hasMoved)
         {
             canvasManager.DisplayTutorialText("Press [WASD] to move");
@@ -46,6 +40,7 @@ public class PlayerManager : MonoBehaviour
             }
         }
 
+        //Shows jump tutorial text
         if (hasJumpPowerUp && jumpPowerUpTutorial)
         {
             canvasManager.DisplayTutorialText("Press [SPACE] to jump");
@@ -56,6 +51,7 @@ public class PlayerManager : MonoBehaviour
             }
         }
 
+        //Shows speed power up text
         if (hasSpeedPowerUp && speedPowerUpTutorial)
         {
             canvasManager.DisplayTutorialText("Press [Left Shift] to move quicker");
@@ -67,11 +63,14 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    //Respawns player and cancels ball's velocity
     public void RespawnPlayer() {
         ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        ball.transform.position = respawnPos;   
+        ball.transform.position = respawnPos;  
+        deaths++;
     }
 
+    //Updates respawn position
     public void UpdateCheckpoint(int checkpointNum, Vector3 checkpointPos) {
         checkpointReached = checkpointNum;
         respawnPos = checkpointPos;

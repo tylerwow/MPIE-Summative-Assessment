@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PowerUpTrigger : MonoBehaviour
@@ -9,7 +6,10 @@ public class PowerUpTrigger : MonoBehaviour
 
     public GameObject powerUp;
 
+    public AudioSource a;
+
     void OnTriggerEnter() {
+        //Adds power up
         if (powerUp.name == "Jump Power Up") {
             playerManager.hasJumpPowerUp = true;
         }
@@ -19,6 +19,8 @@ public class PowerUpTrigger : MonoBehaviour
         if (powerUp.name == "Jump Boost Power Up") {
             playerManager.hasJumpBoostPowerUp = true;
         }
+
+        a.Play();
 
         powerUp.SetActive(false);
     }
